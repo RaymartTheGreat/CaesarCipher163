@@ -1,0 +1,77 @@
+Caesar Cipher is a type of encryption technique that involves shifting the letters of the alphabet by a certain number of positions to create a secret message. It is named after Julius Caesar, who is believed to have used it to encode his messages.
+
+Here's how the algorithm works:
+
+1. Choose a number between 1 and 25, which will be the key for the encryption.
+
+2. Take each letter of the message and shift it forward in the alphabet by the number of positions specified by the key.
+
+3. For example, if the key is 3, the letter "A" would become "D", "B" would become "E", and so on.
+
+4. Wrap around to the beginning of the alphabet if you reach the end. For example, if the key is 3 and you are encrypting the letter "Z", it would become "C".
+
+5. Once all the letters have been shifted, the result is the encrypted message.
+
+6. To decrypt the message, simply shift each letter backwards in the alphabet by the same number of positions as the key.
+
+7. For example, if the key is 3 and the encrypted message is "D GLOO LQ WKH FUDFN", the decrypted message would be "A DING IN THE ROOM".
+
+That's it! The Caesar Cipher is a simple but effective way to encode messages, although it can be easily broken with modern cryptographic techniques.
+
+--------------- FORDA FILE HANDLING ---------------
+
+1. We first get the file input element using its ID (file-upload).
+
+which is this code `const fileUpload = document.getElementById("file-upload");`
+
+2. Then, we add an event listener to listen for when a file is uploaded (the change event). This event is triggered when you select a file using the file input element.
+
+which is this:
+
+fileUpload.addEventListener("change", function () {
+    // Code inside this function will run when a file is uploaded
+});
+
+3. Inside the event listener function, we first check if any file is uploaded. If not, we return (do nothing).
+
+which is this:
+
+if (fileUpload.files.length === 0) {
+    return;
+}
+
+4. If a file is uploaded, we get the first file from the list of uploaded files.
+
+which is this `const file = fileUpload.files[0];`
+
+5. We create a new FileReader object. This object helps us read the content of the file.
+
+which is this `const reader = new FileReader();`
+
+6. We set up another event listener, this time for the FileReader object. This event (the load event) is triggered when the FileReader finishes reading the content of the file.
+
+which is this 
+
+reader.onload = function (e) {
+    // Code inside this function will run when the file content is read
+};
+
+7. Inside the reader.onload function, we update the input text area with the content of the uploaded file, update the character count, and perform the encryption or decryption based on the chosen action.
+
+which is this: 
+
+reader.onload = function (e) {
+        inputText.value = e.target.result;
+        charCount.textContent = inputText.value.length;
+        if (action.value === "encrypt") {
+            encrypt();
+        } else {
+            decrypt();
+        }
+};    
+
+8. Finally, we tell the FileReader object to read the content of the uploaded file as text. This will trigger the load event when the reading is done.
+
+reader.readAsText(file);
+
+In summary, when you upload a file, the code listens for the upload event, reads the content of the file using a FileReader, and then updates the input text area and performs the encryption or decryption based on the chosen action.

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Caesar Cipher</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Caesar Cipher</h1>
+            <div class="text-counter">
+                Characters count: <span id="char-count">0</span>
+            </div>
+            <label for="shift-key">Shift Key:</label>
+            <select id="shift-key">
+                <option value="1" selected>1</option>
+                <!-- Options 2-25 will be added by JavaScript -->
+            </select>
+            <label for="action">Action:</label>
+            <select id="action">
+                <option value="encrypt" selected>Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+            <textarea
+                id="input-text"
+                placeholder="Enter text to encrypt or decrypt..."
+            ></textarea>
+            <button id="process-button">Process</button>
+            <textarea
+                id="output-text"
+                readonly
+                placeholder="Processed text will appear here..."
+            ></textarea>
+
+            <label for="file-upload">Upload a Notepad file:</label>
+            <input type="file" id="file-upload" accept=".txt" />
+
+            <footer>
+                <p>&copy; 2023 Future Tech Solution. All rights reserved.</p>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d2b3c; /* Gloomy violet background */
+    color: #e0dfe6; /* Lighter violet text color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.text-counter {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 50px;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+#action {
+    width: 100px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    min-height: 150px;
+    margin-bottom: 20px;
+    background-color: #4b4a57; /* Darker violet background for textareas */
+    color: #e0dfe6; /* Lighter violet text color */
+    border: none;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: #9a98a6; /* Medium violet placeholder text color */
+}
+
+#process-button {
+    display: block;
+    width: 50%;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #6c6696; /* Violet shade button background */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#process-button:hover {
+    background-color: #594e87; /* Darker violet shade on hover */
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Style for the select dropdowns */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+    background: #594e87; 
+    color: #e0dfe6; 
+}
+
+/* Style for the options inside the dropdowns */
+select option {
+    background: #594e87; 
+    color: #e0dfe6; 
+}
