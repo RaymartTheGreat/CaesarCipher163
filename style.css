@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #2d2b3c; /* Gloomy violet background */
-    color: #e0dfe6; /* Lighter violet text color */
+    background-color: #2d2b3c; 
+    color: #e0dfe6; 
 }
 
 .container {
@@ -13,7 +13,7 @@ body {
 h1 {
     margin-bottom: 20px;
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .text-counter {
@@ -22,7 +22,6 @@ h1 {
 }
 
 label {
-    display: block;
     margin-bottom: 5px;
 }
 
@@ -30,49 +29,6 @@ select {
     width: 50px;
     max-width: 150px;
     margin-bottom: 20px;
-}
-
-#action {
-    width: 100px;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    min-height: 150px;
-    margin-bottom: 20px;
-    background-color: #4b4a57; /* Darker violet background for textareas */
-    color: #e0dfe6; /* Lighter violet text color */
-    border: none;
-    resize: vertical;
-}
-
-textarea::placeholder {
-    color: #9a98a6; /* Medium violet placeholder text color */
-}
-
-#process-button {
-    display: block;
-    width: 50%;
-    max-width: 150px;
-    margin: 0 auto 20px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #6c6696; /* Violet shade button background */
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-#process-button:hover {
-    background-color: #594e87; /* Darker violet shade on hover */
-}
-
-footer {
-    margin-top: 30px;
-    font-size: 14px;
-    text-align: center;
 }
 
 /* Style for the select dropdowns */
@@ -92,4 +48,104 @@ select {
 select option {
     background: #594e87; 
     color: #e0dfe6; 
+}
+
+#action-label {
+    float: right;
+    padding: 10px;
+}
+
+#action {
+    width: 100px;
+    float: right;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    min-height: 150px;
+    margin-bottom: 20px;
+    background-color: #4b4a57; 
+    color: #e0dfe6; 
+    border: none;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: #9a98a6; 
+}
+
+#process-button {
+    width: 50%;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #6c6696; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#process-button:hover {
+    background-color: #594e87; 
+}
+
+#brute-force-button {
+    float: right;
+    width: 50%;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #6c6696;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#brute-force-button:hover {
+    background-color: #594e87;
+}
+
+#download-button {
+    width: 50%;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #8449bb;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#download-button:hover {
+    background-color: #954fd6; 
+}
+
+#reset-button {
+    float: right;
+    width: 50%;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: darkred;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#reset-button:hover {
+    background-color: #b62e2e; 
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
 }
