@@ -12,29 +12,39 @@
             <div class="text-counter">
                 Characters count: <span id="char-count">0</span>
             </div>
+
             <label for="shift-key">Shift Key:</label>
             <select id="shift-key">
                 <option value="1" selected>1</option>
                 <!-- Options 2-25 will be added by JavaScript -->
             </select>
-            <label for="action">Action:</label>
+
             <select id="action">
                 <option value="encrypt" selected>Encrypt</option>
                 <option value="decrypt">Decrypt</option>
             </select>
+            <label for="action" id="action-label">Action:</label>
+            
+
             <textarea
                 id="input-text"
                 placeholder="Enter text to encrypt or decrypt..."
             ></textarea>
             <button id="process-button">Process</button>
+            <button id="brute-force-button">Brute Force Mode</button>
             <textarea
                 id="output-text"
                 readonly
                 placeholder="Processed text will appear here..."
             ></textarea>
 
-            <label for="file-upload">Upload a Notepad file:</label>
-            <input type="file" id="file-upload" accept=".txt" />
+            <div class="controls">
+                <label for="file-upload">Upload a Notepad file:</label>
+                <input type="file" id="file-upload" accept=".txt" />
+
+                <button id="download-button">Download</button>
+                <button id="reset-button">Reset</button>
+            </div>
 
             <footer>
                 <p>&copy; 2023 Future Tech Solution. All rights reserved.</p>
