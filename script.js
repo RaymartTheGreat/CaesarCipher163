@@ -9,6 +9,29 @@ const action = document.getElementById("action");
 // Get the file input element
 const fileUpload = document.getElementById("file-upload");
 
+// Get reset and download
+const resetButton = document.getElementById("reset-button");
+const downloadButton = document.getElementById("download-button");
+
+// Reset button event
+resetButton.addEventListener("click", function () {
+    inputText.value = '';
+    outputText.value = '';
+    charCount.textContent = '0';
+});
+
+// Download button event
+downloadButton.addEventListener("click", function () {
+    const textToSave = `Input Text:\n${inputText.value}\n\nOutput Text:\n${outputText.value}`;
+    const blob = new Blob([textToSave], {type: "text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'caesar_cipher_text.txt';
+    link.click();
+});
+
+
 // Update character count whenever input text changes
 inputText.addEventListener("input", function () {
     charCount.textContent = inputText.value.length;
@@ -89,6 +112,44 @@ function decrypt() {
     outputText.value = output;
 }
 
+// Get the brute force button
+const bruteForceButton = document.getElementById("brute-force-button");
+
+// Brute force button event
+bruteForceButton.addEventListener("click", function () {
+    const input = inputText.value;
+    let output = "";
+
+    // Try all shift possibilities from 1 to 25
+    for (let shift = 1; shift <= 25; shift++) {
+        output += "Shift " + shift + ":\n";
+
+        // Iterate through each character in the input string
+        for (let i = 0; i < input.length; i++) {
+            const charCode = input.charCodeAt(i);
+
+            // Handle uppercase letters
+            if (charCode >= 65 && charCode <= 90) {
+                output += String.fromCharCode(((charCode - 65 + shift) % 26) + 65);
+            }
+            // Handle lowercase letters
+            else if (charCode >= 97 && charCode <= 122) {
+                output += String.fromCharCode(((charCode - 97 + shift) % 26) + 97);
+            }
+            // Handle other characters (leave them unchanged)
+            else {
+                output += input.charAt(i);
+            }
+        }
+
+        output += "\n\n";
+    }
+
+    // Set the decrypted text as the output text
+    outputText.value = output;
+});
+
+
 // Handle file upload
 fileUpload.addEventListener("change", function () {
     if (fileUpload.files.length === 0) {
@@ -106,6 +167,8 @@ fileUpload.addEventListener("change", function () {
         } else {
             decrypt();
         }
+        // Reset the file input here
+        fileUpload.value = "";
     };    
 
     reader.readAsText(file);
